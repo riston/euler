@@ -12,6 +12,10 @@ class Problem
 	 */
 	public function isPandigital($number)
 	{
+		if (strlen($number) != 9) {
+			return false;
+		}
+		
 		$numberArray = str_split($number);
 		if (!$this->isUniqueArray($numberArray)) {
 			return false;
