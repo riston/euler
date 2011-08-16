@@ -46,3 +46,6 @@ class Problem
 		printf('The products sum: %d', $sum);
 	}
 }
+
+$c = new Problem();
+$c->findPandigitals();
