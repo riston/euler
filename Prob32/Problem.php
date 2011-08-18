@@ -36,18 +36,21 @@ class Problem
 	
 	public function findPandigitals()
 	{
-		$sum = 0;
-		$max = 9999;
-		for ($i = 0; $i < $max; $i++) { 
-			for ($j=0; $j < $max; $j++) { 
+		$results = array();
+		$max = 2000;
+		
+		for ($i = 1; $i < $max; $i++) { 
+			for ($j = 1; $j < $max; $j++) { 
 				$result = $i * $j;
-				$sum += $result;
+				
 				if ($this->isPandigital(sprintf('%d%d%d', $i, $j, $result))) {
 					printf('%d x %d = %d' . "\n", $i, $j, $result);
+					$results[] = $result;
 				}
 			}
 		}
-		printf('The products sum: %d', $sum);
+		
+		printf('The products sum: %d', array_sum(array_unique($results)));
 	}
 }
 
