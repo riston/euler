@@ -3,7 +3,7 @@
 /**
  * Euler Problem32
  **/
-class Problem
+class Euler_Prob32_Problem
 {
 	/**
 	 * Check if the given number is pandigital or not
@@ -53,6 +53,8 @@ class Problem
 		printf('The products sum: %d', array_sum(array_unique($results)));
 	}
 }
-
+/*
 $c = new Problem();
 $c->findPandigitals();
+ * /
+ */
