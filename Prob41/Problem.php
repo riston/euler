@@ -51,10 +51,10 @@ class Euler_Prob41_Problem
 		$largest = 2143;
 		
 		// The combination start generating from 4-9
-		for ($i = 5; $i < 6; $i++) { 
+		for ($i = 5; $i < 9; $i++) { 
 			$array = $this->findPermutations(range(1, $i));
 			foreach ($array as $values) {
-				$str = (int) array_reduce($values, $conv);
+				$str = (int) array_reduce(explode(',', $values), $conv);
 				
 				if ($this->isPrime($str) && $str > $largest) {
 					$largest = $str;

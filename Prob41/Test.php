@@ -14,6 +14,13 @@ class Euler_Prob41_Test extends PHPUnit_Framework_TestCase
 		sort(&$unSortedArray, SORT_NUMERIC);
 		$this->assertEquals(array(1, 2, 3, 4), $unSortedArray);
 	}
+
+	public function testFindingPermutations()
+	{
+		$c = new Euler_Prob41_Problem();
+		$this->assertEquals(6, count($c->findPermutations(range(1, 3))));
+	}
+		
 	
 	public function testThePrimes()
 	{
