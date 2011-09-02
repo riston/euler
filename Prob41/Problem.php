@@ -36,11 +36,19 @@ class Euler_Prob41_Problem
 	
 	public function isPrime($num)
 	{
-		for ($i = 2; $i < floor(sqrt($num)); $i++) { 
-			if (($num % $i) == 0) 
-				return false;
-		}
-		return true;
+//		for ($i = 2; $i < floor(sqrt($num)); $i++) { 
+//			if (($num % $i) != 0) 
+//				return false;
+//		}
+//		return true;
+		if($num % 2 != 1) return false; 
+		$d = 3; 
+		$x = sqrt($num); 
+		while ($num % $d != 0 && $d < $x) $d += 2; 
+			if((($num % $d == 0 && $num != $d) * 1) == 0) 
+				return true; 
+			
+		return false;
 	}
 	
 	public function solution()

@@ -48,8 +48,10 @@ class Euler_Prob37_Problem
 		$left	= $this->leftRemove($number);
 		$nums	= array_merge($right, $left);
 
+		$notTruncatable = array(2, 3, 5, 7);
 		foreach ($nums as $numbers) {
-			if (!$this->prob41->isPrime(intval($numbers)))
+			if (!$this->prob41->isPrime(intval($numbers)) 
+					&& !in_array($numbers, $notTruncatable))
 				return false;
 		}
 		return true;
@@ -67,3 +69,7 @@ while (count($primes) < 11) {
 }
 print_r($primes);
 echo array_sum($primes);
+
+$prob = new Euler_Prob41_Problem;
+var_dump($prob->isPrime(35));
+var_dump($prob->isPrime(13));
